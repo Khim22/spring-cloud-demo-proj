@@ -1,5 +1,6 @@
 package com.spring.cloud.demo.example.service;
 
+import com.spring.cloud.demo.example.employee.exchange.EmployeePublisher;
 import com.spring.cloud.demo.example.employee.model.Employee;
 import com.spring.cloud.demo.example.employee.model.EmployeeDto;
 import com.spring.cloud.demo.example.employee.repository.EmployeeRepository;
@@ -20,8 +21,11 @@ public class EmployeeServiceTest {
     @Mock
     private EmployeeRepository employeeRepository;
 
+    @Mock
+    private EmployeePublisher employeePublisher;
+
     @InjectMocks
-    private EmployeeServiceInterface employeeService = new EmployeeService(employeeRepository);
+    private EmployeeServiceInterface employeeService = new EmployeeService(employeeRepository, employeePublisher);
 
     @Test
     public void createEmployee_givenEmployeeDto_shouldReturnEmployeeDto() {
