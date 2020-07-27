@@ -1,0 +1,1 @@
+CREATE TABLE IF NOT EXISTS employee (id IDENTITY auto_increment PRIMARY KEY, name VARCHAR(255), department VARCHAR(255));
